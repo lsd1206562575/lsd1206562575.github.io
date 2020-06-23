@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lsd1206562575.github.io</id>
     <title>LSDong98</title>
-    <updated>2020-06-23T04:08:30.239Z</updated>
+    <updated>2020-06-23T09:44:48.205Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lsd1206562575.github.io"/>
     <link rel="self" href="https://lsd1206562575.github.io/atom.xml"/>
@@ -11,17 +11,23 @@
     <icon>https://lsd1206562575.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, LSDong98</rights>
     <entry>
-        <title type="html"><![CDATA[Java--多线程]]></title>
+        <title type="html"><![CDATA[Java--多线程的概念和创建方式]]></title>
         <id>https://lsd1206562575.github.io/post/java-duo-xian-cheng/</id>
         <link href="https://lsd1206562575.github.io/post/java-duo-xian-cheng/">
         </link>
         <updated>2020-06-22T11:38:24.000Z</updated>
         <content type="html"><![CDATA[<p>1.进程和线程的概念</p>
 <p>进程：1.作为资源分配的单位。（对于操作系统而言）<br>
-2.每个进程都有独立的代码和数据空间（相当于执行过程中的程序）</p>
-<p>线程：1.执行和调度的单位。（对于cpu而言）<br>
+2.每个进程都有独立的代码和数据空间（相当于执行过程中的程序）<br>
+线程：1.执行和调度的单位。（对于cpu而言）<br>
 2.是程序中独立的执行路径</p>
-<p>2.线程创建的三种方式</p>
+<p>2.线程创建的三种方式<br>
+1）继承Thread类<br>
+2）实现runnable接口<br>
+3）实现callable接口</p>
+<ol>
+<li></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
