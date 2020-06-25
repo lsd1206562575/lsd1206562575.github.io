@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>LSDong98</title>
+<title>Mysql必知必会-知识点 | LSDong98</title>
 <meta name="description" content="赖曙东的学习之路">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -75,89 +77,60 @@
 </transition>
 
 
-        <div class="content-container">
+      <div class="content-container">
+        <div class="post-detail">
           
-          
+          <h2 class="post-title">Mysql必知必会-知识点</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-06-24</span>
+            
+          </div>
+          <div class="post-content">
+            <p>1.主键的满足条件：<br>
+1&gt;任意两行不具有相同的主键值<br>
+2&gt;每行都必须具有一个主键值</p>
+<p>主键定义时可使用多列，但是所有列值的组合必须是唯一的（但单个列的值可以不唯一）</p>
+<p>2.显示可用的数据库和表的命令--show命令<br>
+show databases--返回可用数据库的列表<br>
+show tables--返回可用表的列表<br>
+show columns from --返回指定表中的每个字段的具体信息</p>
+<p>3.检索数据命令--select命令<br>
+去重--distinct（应用于所有列）<br>
+限制结果--limit 5，5（第一个数字表示检索开始的行，第二个数字表示行数）</p>
+<p>4.排序数据<br>
+order by子句取一个或多个列的名字，对输出进行排序<br>
+order by 默认为升序排序。降序排序需指定desc关键字。desc关键字只应用于其前面的列名。</p>
+<p>5.过滤数据<br>
+where来选择相等、不相等、大于、小于、值的范围以及NULL值。<br>
+and操作符来添加多个过滤条件<br>
+or操作符来匹配任一条件而不是同时匹配两个条件<br>
+in操作符来指定条件范围<br>
+not操作符否定跟在后面的条件<br>
+%表示任何字符出现任意次数<br>
+_（下划线）只匹配单个字符<br>
+匹配特殊字符必须用\作为前导</p>
+<p>6.创建计算字段<br>
+用concat（）函数拼接两个列<br>
+Rtrim（）函数去掉值右边的所有空格<br>
+使用as关键字来替换一个字段或值的名称</p>
 
-<div class="archives-container">
-  
-    <h2 class="year">2020</h2>
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/si-suo-de-chan-sheng-tiao-jian/">
-            <h2 class="post-title">
-              死锁的产生条件
-              <small>2020-06-24</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/mysql-bi-bei-de-ji-chu-zhi-shi/">
-            <h2 class="post-title">
-              Mysql必知必会-知识点
-              <small>2020-06-24</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/java-xian-cheng-zhuang-tai/">
-            <h2 class="post-title">
-              Java--线程状态
-              <small>2020-06-24</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/java-duo-xian-cheng/">
-            <h2 class="post-title">
-              Java--多线程的概念和创建方式
-              <small>2020-06-22</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-    
-  
-    <h2 class="year">2018</h2>
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/hello-gridea/">
-            <h2 class="post-title">
-              Hello Gridea
-              <small>2018-12-12</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-  
-</div>
-
-
+          </div>
         </div>
 
-        <div class="site-footer">
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://lsd1206562575.github.io/post/java-xian-cheng-zhuang-tai/">
+              <h3 class="post-title">
+                下一篇：Java--线程状态
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
   <div class="slogan">赖曙东的学习之路</div>
   <div class="social-container">
     
@@ -176,8 +149,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -193,6 +166,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>

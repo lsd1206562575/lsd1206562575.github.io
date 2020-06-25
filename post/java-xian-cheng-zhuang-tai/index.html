@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>LSDong98</title>
+<title>Java--线程状态 | LSDong98</title>
 <meta name="description" content="赖曙东的学习之路">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -75,89 +77,47 @@
 </transition>
 
 
-        <div class="content-container">
+      <div class="content-container">
+        <div class="post-detail">
           
-          
+          <h2 class="post-title">Java--线程状态</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-06-24</span>
+            
+          </div>
+          <div class="post-content">
+            <p><img src="https://lsd1206562575.github.io/post-images/1592981189687.png" alt="" loading="lazy"><br>
+<img src="https://lsd1206562575.github.io/post-images/1592981193509.png" alt="" loading="lazy"></p>
+<p>进入新生状态后，每个线程有自己的工作空间，从主内存中拷贝数据进入自己的工作空间操作。<br>
+然后进入就绪状态，只是具有运行的条件，没有分配到cpu，不能马上运行，处于线程的就绪队列中。<br>
+系统选择到了就绪的线程后才会进入运行状态。<br>
+4种原因进入就绪状态：1.start方法<br>
+2.阻塞事件解除，重新进入就绪状态<br>
+3.调用yield方法，让出cpu调度<br>
+4.jvm将本地线程切换到指定线程<br>
+4种原因导致阻塞状态：1.sleep方法 （携带资源）<br>
+2.wait方法（不携带资源）<br>
+3.join方法， 阻塞指定线程<br>
+4.io操作，例如read和write<br>
+最后进入死亡状态，原因有两个，分别为线程执行完代码正常结束和线程被强制中止</p>
 
-<div class="archives-container">
-  
-    <h2 class="year">2020</h2>
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/si-suo-de-chan-sheng-tiao-jian/">
-            <h2 class="post-title">
-              死锁的产生条件
-              <small>2020-06-24</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/mysql-bi-bei-de-ji-chu-zhi-shi/">
-            <h2 class="post-title">
-              Mysql必知必会-知识点
-              <small>2020-06-24</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/java-xian-cheng-zhuang-tai/">
-            <h2 class="post-title">
-              Java--线程状态
-              <small>2020-06-24</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/java-duo-xian-cheng/">
-            <h2 class="post-title">
-              Java--多线程的概念和创建方式
-              <small>2020-06-22</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-    
-  
-    <h2 class="year">2018</h2>
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <article class="post">
-          <a href="https://lsd1206562575.github.io/post/hello-gridea/">
-            <h2 class="post-title">
-              Hello Gridea
-              <small>2018-12-12</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-  
-</div>
-
-
+          </div>
         </div>
 
-        <div class="site-footer">
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://lsd1206562575.github.io/post/java-duo-xian-cheng/">
+              <h3 class="post-title">
+                下一篇：Java--多线程的概念和创建方式
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
   <div class="slogan">赖曙东的学习之路</div>
   <div class="social-container">
     
@@ -176,8 +136,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -193,6 +153,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>
