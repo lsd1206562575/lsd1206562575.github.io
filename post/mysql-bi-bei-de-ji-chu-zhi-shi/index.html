@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lsd1206562575.github.io/favicon.ico?v=1593094762754">
+<link rel="shortcut icon" href="https://lsd1206562575.github.io/favicon.ico?v=1593181137575">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://lsd1206562575.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://lsd1206562575.github.io">
-        <img class="avatar" src="https://lsd1206562575.github.io/images/avatar.png?v=1593094762754" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://lsd1206562575.github.io/images/avatar.png?v=1593181137575" alt="" width="32px" height="32px">
       </a>
       <a href="https://lsd1206562575.github.io">
         <h1 class="site-title">LSDong98</h1>
@@ -110,9 +110,63 @@ not操作符否定跟在后面的条件<br>
 _（下划线）只匹配单个字符<br>
 匹配特殊字符必须用\作为前导</p>
 <p>6.创建计算字段<br>
-用concat（）函数拼接两个列<br>
+用concat（）函数拼接两个列,各个串之间用逗号分隔<br>
+<img src="https://lsd1206562575.github.io/post-images/1593139772642.png" alt="" loading="lazy"><br>
 Rtrim（）函数去掉值右边的所有空格<br>
 使用as关键字来替换一个字段或值的名称</p>
+<p>7.函数<br>
+count()确定表中的行数或符合特定条件的行数<br>
+group by创建分组（出现在where之后，order by之前）<br>
+where是对分组前的数据进行过滤，having是对分组后的数据进行过滤<br>
+<img src="https://lsd1206562575.github.io/post-images/1593138835734.png" alt="" loading="lazy"><br>
+count（*）前加的列名，是对之前列中的行进行计数</p>
+<p>8.select子句及其顺序<br>
+select-from-where-group by- having -order by -limit</p>
+<p>9.表联结<br>
+inner join<br>
+left outer join<br>
+right outer join</p>
+<p>10.组合查询<br>
+UNION指示MySQL执行两条SELECT语句，并把输出结合成单个查询结果集<br>
+（默认会取消重复行，若想返回所有匹配行，可用UNION ALL）</p>
+<p>11.全文本搜索<br>
+Match()指定被搜索的列，Against()指定要使用的搜索表达式<br>
+（全文本搜索会对结果排序，具有较高等级的行先返回）</p>
+<p>12.数据插入<br>
+<img src="https://lsd1206562575.github.io/post-images/1593143620501.png" alt="" loading="lazy"></p>
+<p>13.数据更新<br>
+UPDATE语句由3部分组成，分别是：要更新的表，列名和它们的新值，确定更新行的过滤条件；（删除列）<br>
+<img src="https://lsd1206562575.github.io/post-images/1593147667924.png" alt="" loading="lazy"><br>
+DELETE语句：从表中删除特定的行；从表中删除所有行</p>
+<p>14.创建和操纵表<br>
+利用CREATE TABLE创建表：新表的名字，在关键字CREATE TABLE之后给出；表列的名字和定义，用逗号分隔。<br>
+<img src="https://lsd1206562575.github.io/post-images/1593148211446.png" alt="" loading="lazy"><br>
+更新表使用ALTER TABLE语句，添加列，删除列，定义外键<br>
+删除表 DROP TABLE<br>
+重命名表 RENAME TABLE (旧表名称) TO (新表名称)</p>
+<p>15.数据库引擎<br>
+InnoDB是一个可靠的事务处理引擎，不支持全文本搜索<br>
+MEMORY在功能上等同于MyISAM，但数据存储在内存（不是磁盘），速度很快（特别适合于临时表）<br>
+MyISAM是一个性能极高的引擎，支持全文本搜索，但不支持事务处理</p>
+<p>16.存储过程<br>
+创建存储过程：返回产品平均价格的存储过程<br>
+<img src="https://lsd1206562575.github.io/post-images/1593149554079.png" alt="" loading="lazy"><br>
+使用CALL 命令使用存储过程<br>
+<img src="https://lsd1206562575.github.io/post-images/1593149650525.png" alt="" loading="lazy"><br>
+删除存储过程<br>
+<img src="https://lsd1206562575.github.io/post-images/1593149917792.png" alt="" loading="lazy"></p>
+<p>17.触发器<br>
+创建触发器的4个条件：<br>
+1.唯一的触发器名<br>
+2.触发器关联的表<br>
+3.触发器应该响应的活动（DELETE、INSERT或UPDATE）<br>
+4.触发器何时执行（处理之前或之后）</p>
+<p>触发器用CREATE TRIGGER语句创建<br>
+<img src="https://lsd1206562575.github.io/post-images/1593169033527.png" alt="" loading="lazy"><br>
+只有表才支持触发器。<br>
+每个表每个事件每次只允许一个触发器。因此。每个表最多支持6个触发器（每条INSERT、UPDATE和DELETE的之前和之后）。单一触发器不能与多个事件或多个表关联。</p>
+<p>18.事务处理<br>
+事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果。利用事务处理，可以保证一组操作不会中途停止，它们作为整体执行，或者完全不执行（除非明确指示）。如果没有错误发生，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态。</p>
 
           </div>
         </div>
