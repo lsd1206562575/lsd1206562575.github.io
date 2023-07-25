@@ -507,14 +507,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-07-21
+                    2023-07-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    39k
+                    38.8k
                 </div>
                 
 
@@ -809,7 +809,7 @@ scanner<span class="token punctuation">.</span><span class="token function">clos
 <li>对象是类的实例</li>
 <li>对象是某一个具体的事物，如学生，狗等</li>
 </ul>
-<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="/./JavaSE.assets/1685121181512-1685121189123-2.png" alt="1685121181512"></p>
+<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="/.io//1685121181512-1685121189123-2.png" alt="1685121181512"></p>
 <h2 id="类的使用"><a href="#类的使用" class="headerlink" title="类的使用"></a>类的使用</h2><h3 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h3><p>语法：</p>
 <pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> 类名<span class="token punctuation">&#123;</span>
 成员属性<span class="token punctuation">;</span>
@@ -1438,23 +1438,9 @@ s2<span class="token punctuation">.</span><span class="token function">run</span
 </ul>
 </li>
 </ul>
-<h3 id="单核CPU和多核CPU的理解"><a href="#单核CPU和多核CPU的理解" class="headerlink" title="单核CPU和多核CPU的理解"></a>单核CPU和多核CPU的理解</h3><ul>
-<li>单核CPU，其实是一种假的多线程，因为在一个时间单元内，也只能执行一个线程的任务。例如：虽然有多车道，但是收费站只有一个工作人员在收费，只有收了费才能通过，那么CPU就好比收费人员。如果有某个人不想交钱， 那么收费人员可以把他“挂起”（晾着他，等他想通了，准备好了钱，再去收费） 。 但是因为CPU时间单元特别短，因此感觉不出来。</li>
-<li>如果是多核的话，才能更好的发挥多线程的效率。（现在的服务器都是多核的）</li>
-<li>一个<strong>Java</strong>应用程序<strong>java.exe</strong>，其实至少有三个线程： main()主线程， gc()垃圾回收线程，异常处理线程。当然如果发生异常，会影响主线程</li>
-</ul>
 <h3 id="并行与并发"><a href="#并行与并发" class="headerlink" title="并行与并发"></a>并行与并发</h3><ul>
 <li><strong>并行</strong>： 多个CPU同时执行多个任务。比如：多个人同时做不同的事。  </li>
 <li><strong>并发</strong>： 一个CPU(采用时间片)同时执行多个任务。比如：秒杀、多个人做同一件事。</li>
-</ul>
-<h3 id="使用多线程的优点"><a href="#使用多线程的优点" class="headerlink" title="使用多线程的优点"></a>使用多线程的优点</h3><ul>
-<li>背景： 以单核CPU为例， 只使用单个线程先后完成多个任务（调用多个方法），肯定比用多个线程来完成用的时间更短，为何仍需多线程呢？  </li>
-<li>多线程程序的优点：<ol>
-<li>提高应用程序的响应。对图形化界面更有意义，可增强用户体验。</li>
-<li>提高计算机系统CPU的利用率</li>
-<li>改善程序结构。将既长又复杂的进程分为多个线程，独立运行，利于理解和修改</li>
-</ol>
-</li>
 </ul>
 <h3 id="何时需要多线程"><a href="#何时需要多线程" class="headerlink" title="何时需要多线程"></a>何时需要多线程</h3><ul>
 <li>程序需要同时执行两个或多个任务。</li>
@@ -1491,7 +1477,6 @@ s2<span class="token punctuation">.</span><span class="token function">run</span
     <span class="token comment">//需要重新创建一个线程对象</span>
     <span class="token class-name">MyThread</span> t2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mythread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     t2<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    
     
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>  </code></pre>
@@ -1580,7 +1565,14 @@ s2<span class="token punctuation">.</span><span class="token function">run</span
 <p>原因：1.实现的方式没有类的单继承性的局限性</p>
 <p>​			2.实现的方式更适合来处理多个线程有共享数据的情况。</p>
 <p>联系： public class Thread implements Runnable</p>
-<p>]相同点：两种方式都需要重写run(), 将线程要执行的逻辑声明在run()中</p>
+<p>相同点：两种方式都需要重写run(), 将线程要执行的逻辑声明在run()中</p>
+<h3 id="方式三：实现Callable接口"><a href="#方式三：实现Callable接口" class="headerlink" title="方式三：实现Callable接口"></a>方式三：实现Callable接口</h3><p>1.实现Callable接口，需要返回值类型</p>
+<p>2.重写call方法，需要抛出异常</p>
+<p>3.创建目标对象</p>
+<p>4.创建执行服务: ExecutorService ser &#x3D; Executors.newFixedThreadPool(1);</p>
+<p>5.提交执行: Future<Boolean> result1 &#x3D; ser.submit(t1);</Boolean></p>
+<p>6.获取结果: boolean r1 &#x3D; result1.get()</p>
+<p>7.关闭服务: ser.shutdownNow();</p>
 <h3 id="线程的分类"><a href="#线程的分类" class="headerlink" title="线程的分类"></a>线程的分类</h3><p>Java中的线程分为两类：一种是守护线程，一种是用户线程。</p>
 <ul>
 <li>它们在几乎每个方面都是相同的，唯一的区别是判断JVM何时离开。</li>
@@ -1589,6 +1581,11 @@ s2<span class="token punctuation">.</span><span class="token function">run</span
 <li>若JVM中都是守护线程，当前JVM将退出。</li>
 <li>形象理解： 兔死狗烹，鸟尽弓藏</li>
 </ul>
+<h2 id="Lamda表达式"><a href="#Lamda表达式" class="headerlink" title="Lamda表达式"></a>Lamda表达式</h2><p>1.定义一个函数式接口（只有一个方法）</p>
+<p>2.实现类</p>
+<p>3.静态内部类（class内）</p>
+<p>4.局部内部类（方法内）</p>
+<p>5.匿名内部类（没有类的名称，必须借助接口或者父类）</p>
 <h2 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h2><ul>
 <li>JDK中用Thread.State类定义了线程的几种状态<br>要想实现多线程， 必须在主线程中创建新的线程对象。 Java语言使用Thread类及其子类的对象来表示线程， 在它的一个完整的生命周期中通常要经历如下的<strong>五种状态</strong>：<ul>
 <li>新建： 当一个Thread类或其子类的对象被声明并创建时，新生的线程对象处于新建状态</li>
@@ -1889,7 +1886,7 @@ s2<span class="token punctuation">.</span><span class="token function">run</span
 <li>JDK 5.0起提供了线程池相关API： ExecutorService 和 Executors</li>
 <li>ExecutorService：真正的线程池接口。常见子类ThreadPoolExecutor<ul>
 <li>void execute(Runnable command) ：执行任务&#x2F;命令，没有返回值，一般用来执行Runnable</li>
-<li><T> Future<T> submit(Callable<T> task)：执行任务，有返回值，一般又来执行Callable</li>
+<li><T> Future<T> submit(Callable<T> task)：执行任务，有返回值，一般又来执行Callable</T></T></T></li>
 <li>void shutdown() ：关闭连接池</li>
 </ul>
 </li>
@@ -2656,7 +2653,7 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 </li>
 <li>Map接口： 双列数据，保存具有映射关系“key-value对”的集合</li>
 </ul>
-<p><img src="/./JavaSE.assets/java-collection-hierarchy.png" alt="Java 集合框架概览"></p>
+<p><img src="/.io//java-collection-hierarchy.png" alt="Java 集合框架概览"></p>
 <h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2><h3 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h3><p>定义: 单列集合,用来存储一个一个的对象  </p>
 <h4 id="Collection子接口一：-List"><a href="#Collection子接口一：-List" class="headerlink" title="Collection子接口一： List"></a>Collection子接口一： List</h4><ul>
 <li>定义:存储有序的、可重复的数据. –&gt;”动态数组”<ul>
@@ -3110,7 +3107,7 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 
 
 
-<h3 id="通配符的使用"><a href="#通配符的使用" class="headerlink" title="通配符的使用"></a>通配符的使用</h3><p>类A是类B的父类，G<A>和G<B>是没有关系的，二者共同的父类是：G&lt;?&gt;</p>
+<h3 id="通配符的使用"><a href="#通配符的使用" class="headerlink" title="通配符的使用"></a>通配符的使用</h3><p>类A是类B的父类，G<A>和G<B>是没有关系的，二者共同的父类是：G&lt;?&gt;</B></A></p>
 <pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">></span></span> list1 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
     <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list2 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
@@ -3333,7 +3330,7 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 <li><p>Java程序中，对于数据的输入&#x2F;输出操作以“**流(stream)**” 的方式进行。</p>
 </li>
 <li><p>java.io包下提供了各种“流”类和接口，用以获取不同种类的数据，并通过<strong>标准的方法</strong>输入或输出数据。  </p>
-<p><img src="/image/image-20210416152618153-1618557984713.png" alt="image-20210416152618153"></p>
+<p><img src="/.io//image-20210416152618153-1618557984713.png" alt="image-20210416152618153"></p>
 </li>
 <li><p>输入input： 读取外部数据（磁盘、光盘等存储设备的数据）到程序（内存）中。</p>
 </li>
@@ -3368,24 +3365,24 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 <li>Java的IO流共涉及40多个类，实际上非常规则，都是从如下4个抽象基类派生的。</li>
 <li>由这四个类派生出来的子类名称都是以其父类名作为子类名后缀。</li>
 </ol>
-<img src="image/WeChat Screenshot_20210416154552.png" style="zoom:67%;" />
+<img src="/.io//WeChat Screenshot_20210416154552.png" style="zoom:67%;">
 
-<img src="image/WeChat Screenshot_20210416154705.png" style="zoom: 80%;" />
+<img src="/.io//WeChat Screenshot_20210416154705.png" style="zoom: 80%;">
 
 <p>​																							</p>
 <p>​																								IO流体系</p>
-<img src="image/image-20210416154746739.png" alt="image-20210416154746739"  />
+<img src="/.io//image-20210416154746739.png" alt="image-20210416154746739">
 
 
 
 <h4 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h4><ul>
 <li>节点流：直接从数据源或目的地读写数据</li>
 </ul>
-<p><img src="/image/image-20210416155052640.png" alt="image-20210416155052640"></p>
+<p><img src="/.io//image-20210416155052640.png" alt="image-20210416155052640"></p>
 <ul>
 <li>处理流：不直接连接到数据源或目的地，而是“连接” 在已存在的流（节点流或处理流）之上，通过对数据的处理为程序提供更为强大的读写功能。</li>
 </ul>
-<p><img src="/image/image-20210416155105736.png" alt="image-20210416155105736"></p>
+<p><img src="/.io//image-20210416155105736.png" alt="image-20210416155105736"></p>
 <h4 id="InputStream-amp-Reader"><a href="#InputStream-amp-Reader" class="headerlink" title="InputStream &amp; Reader"></a>InputStream &amp; Reader</h4><ul>
 <li>InputStream 和 Reader 是所有输入流的基类。</li>
 <li>InputStream（典型实现： FileInputStream）<ul>
@@ -3555,7 +3552,7 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 <h3 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h3><ul>
 <li>为了提高数据读写的速度， Java API提供了带缓冲功能的流类，在使用这些流类时，会创建一个内部缓冲区数组，缺省（default）使用8192个字节(8Kb)的缓冲区。</li>
 </ul>
-<p><img src="/image/image-20210416171603160.png" alt="image-20210416171603160"></p>
+<p><img src="/.io//image-20210416171603160.png" alt="image-20210416171603160"></p>
 <ul>
 <li><p>缓冲流要“套接”在相应的节点流之上，根据数据操作单位可以把缓冲流分为：</p>
 <ul>
@@ -3576,8 +3573,8 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 <li><p>如果是带缓冲区的流对象的close()方法， 不但会关闭流， 还会在关闭流之前刷新缓冲区， 关闭后不能再写出</p>
 </li>
 </ul>
-<p><img src="/image/image-20210416172043475-1618564846335.png" alt="image-20210416172043475"></p>
-<p><img src="/image/image-20210416172057237-1618564859175.png" alt="image-20210416172057237"></p>
+<p><img src="/.io//image-20210416172043475-1618564846335.png" alt="image-20210416172043475"></p>
+<p><img src="/.io//image-20210416172057237-1618564859175.png" alt="image-20210416172057237"></p>
 <pre class="language-java" data-language="java"><code class="language-java"><span class="token class-name">BufferedReader</span> br <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
 <span class="token class-name">BufferedWriter</span> bw <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
 
@@ -3647,7 +3644,7 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 </ul>
 </li>
 </ul>
-<p><img src="/image/image-20210418133813645-1618724297584.png" alt="image-20210418133813645"></p>
+<p><img src="/.io//image-20210418133813645-1618724297584.png" alt="image-20210418133813645"></p>
 <pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testMyInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
     <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"dbcp.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"dbcp5.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -3688,7 +3685,7 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 </ul>
 </li>
 </ul>
-<p><img src="/image/image-20210418155722107-1618732644193.png" alt="image-20210418155722107"><img src="/image/image-20210418155734089-1618732655666.png" alt="image-20210418155734089"></p>
+<p><img src="/.io//image-20210418155722107-1618732644193.png" alt="image-20210418155722107"><img src="/.io//image-20210418155734089-1618732655666.png" alt="image-20210418155734089"></p>
 <ul>
 <li><p>在Unicode出现之前，所有的字符集都是和具体编码方案绑定在一起的（即字符集≈编码方式） ，都是直接将字符和最终字节流绑定死了。</p>
 </li>
@@ -3701,9 +3698,9 @@ sb1<span class="token punctuation">.</span><span class="token function">append</
 <li><p>Unicode只是定义了一个庞大的、全球通用的字符集，并为每个字符规定了唯一确定的编号，具体存储成什么样的字节流，取决于字符编码方案。 推荐的Unicode编码是UTF-8和UTF-16。</p>
 </li>
 </ul>
-<p><img src="/image/image-20210418161006065.png" alt="image-20210418161006065"></p>
-<p><img src="/image/image-20210418161042312-1618733444385.png" alt="image-20210418161042312"></p>
-<p><img src="/image/image-20210418161101829-1618733463161.png" alt="image-20210418161101829"></p>
+<p><img src="/.io//image-20210418161006065.png" alt="image-20210418161006065"></p>
+<p><img src="/.io//image-20210418161042312-1618733444385.png" alt="image-20210418161042312"></p>
+<p><img src="/.io//image-20210418161101829-1618733463161.png" alt="image-20210418161101829"></p>
 <ul>
 <li>编码： 字符串 -&gt; 字节数组</li>
 <li>解码： 字节数组 -&gt; 字符串</li>
@@ -4116,7 +4113,7 @@ baos<span class="token punctuation">.</span><span class="token function">write</
 <p>Files常用方法：用于操作内容</p>
 <ul>
 <li>SeekableByteChannel newByteChannel(Path path, OpenOption…how) : 获取与指定文件的连接， how 指定打开方式。</li>
-<li>DirectoryStream<Path> newDirectoryStream(Path path) : 打开 path 指定的目录</li>
+<li>DirectoryStream<Path> newDirectoryStream(Path path) : 打开 path 指定的目录</Path></li>
 <li>InputStream newInputStream(Path path, OpenOption…how):获取 InputStream 对象</li>
 <li>OutputStream newOutputStream(Path path, OpenOption…how) : 获取 OutputStream 对象</li>
 </ul>
@@ -4194,9 +4191,9 @@ baos<span class="token punctuation">.</span><span class="token function">write</
 </ul>
 </li>
 </ul>
-<img src="image/image-20210425215456938.png" alt="image-20210425215456938" style="zoom: 80%;" />
+<img src="/.io//image-20210425215456938.png" alt="image-20210425215456938" style="zoom: 80%;">
 
-<img src="image/image-20210425215537316.png" alt="image-20210425215537316" style="zoom: 80%;" />
+<img src="/.io//image-20210425215537316.png" alt="image-20210425215537316" style="zoom: 80%;">
 
 <ul>
 <li>UDP协议：<ul>
@@ -4374,7 +4371,7 @@ baos<span class="token punctuation">.</span><span class="token function">write</
 <li><p>加载完类之后， 在堆内存的方法区中就产生了一个Class类型的对象（ 一个类只有一个Class对象） ， 这个对象就包含了完整的类的结构信息。 通过这个对象看到类的结构。</p>
 </li>
 </ul>
-<p><img src="/image/image-20210428153436593.png" alt="image-20210428153436593"></p>
+<p><img src="/.io//image-20210428153436593.png" alt="image-20210428153436593"></p>
 <h3 id="补充：动态语言-vs-静态语言"><a href="#补充：动态语言-vs-静态语言" class="headerlink" title="补充：动态语言 vs 静态语言"></a>补充：动态语言 vs 静态语言</h3><p>1、动态语言<br>是一类在运行时可以改变其结构的语言：例如新的函数、对象、甚至代码可以被引进，已有的函数可以被删除或是其他结构上的变化。通俗点说就是<strong>在运行时代码可以根据某些条件改变自身结构。</strong><br>主要动态语言： Object-C、 C#、 JavaScript、 PHP、 Python、 Erlang。<br>2、静态语言<br>与动态语言相对应的， <strong>运行时结构不可变的语言就是静态语言</strong>。如Java、 C、C++。</p>
 <blockquote>
 <p>Java不是动态语言， 但Java可以称之为“<strong>准动态语言</strong>” 。 即Java有一定的动态性， 我们可以利用反射机制、 字节码操作获得类似动态语言的特性。<br>Java的动态性让编程的时候更加灵活！  </p>
@@ -4566,7 +4563,7 @@ baos<span class="token punctuation">.</span><span class="token function">write</
 
 
 <h2 id="类的加载与ClassLoader的理解"><a href="#类的加载与ClassLoader的理解" class="headerlink" title="类的加载与ClassLoader的理解"></a>类的加载与ClassLoader的理解</h2><h3 id="了解：类的加载过程"><a href="#了解：类的加载过程" class="headerlink" title="了解：类的加载过程"></a>了解：类的加载过程</h3><p>当程序主动使用某个类时，如果该类还未被加载到内存中，则系统会通过如下三个步骤来对该类进行初始化。</p>
-<p><img src="/image/image-20210429100635410.png"></p>
+<p><img src="/.io//image-20210429100635410.png"></p>
 <ul>
 <li>加载：将class文件字节码内容加载到内存中，并将这些静态数据转换成方法区的运行时数据结构，然后生成一个代表这个类的java.lang.Class对象，作为方法区中类数据的访问入口（即引用地址）。所有需要访问和使用类数据只能通过这个Class对象。这个加载的过程需要类加载器参与。</li>
 <li>链接：将Java类的二进制代码合并到JVM的运行状态之中的过程。<ul>
@@ -4576,9 +4573,9 @@ baos<span class="token punctuation">.</span><span class="token function">write</
 </ul>
 </li>
 <li>初始化：<ul>
-<li>执行**类构造器<clinit>()**方法的过程。 <strong>类构造器<clinit>()方法是由编译期自动收集类中所有类变量的赋值动作和静态代码块中的语句合并产生的。</strong> （类构造器是构造类信息的，不是构造该类对象的构造器） 。</li>
+<li>执行**类构造器<clinit>()**方法的过程。 <strong>类构造器<clinit>()方法是由编译期自动收集类中所有类变量的赋值动作和静态代码块中的语句合并产生的。</clinit></strong> （类构造器是构造类信息的，不是构造该类对象的构造器） 。</clinit></li>
 <li>当初始化一个类的时候，如果发现其父类还没有进行初始化，则需要先触发其父类的初始化。</li>
-<li>虚拟机会保证一个类的<clinit>()方法在多线程环境中被正确加锁和同步。</li>
+<li>虚拟机会保证一个类的<clinit>()方法在多线程环境中被正确加锁和同步。</clinit></li>
 </ul>
 </li>
 </ul>
@@ -4601,7 +4598,7 @@ baos<span class="token punctuation">.</span><span class="token function">write</
 <span class="token comment">// 		m = 100;</span>
 <span class="token comment">// 	&#125;</span></code></pre>
 
-<img src="image/image-20210429192914273.png" alt="image-20210429192914273" style="zoom:80%;" />
+<img src="/.io//image-20210429192914273.png" alt="image-20210429192914273" style="zoom:80%;">
 
 <p><strong>类加载器的作用</strong>：</p>
 <ul>
@@ -4609,7 +4606,7 @@ baos<span class="token punctuation">.</span><span class="token function">write</
 <li>类缓存： 标准的JavaSE类加载器可以按要求查找类， 但一旦某个类被加载到类加载器中， 它将维持加载（缓存） 一段时间。 不过JVM垃圾回收机制可以回收这些Class对象。</li>
 </ul>
 <h3 id="了解：-ClassLoader"><a href="#了解：-ClassLoader" class="headerlink" title="了解： ClassLoader"></a>了解： ClassLoader</h3><p>类加载器作用是用来把类(class)装载进内存的。 JVM 规范定义了如下类型的类的加载器。  </p>
-<p><img src="/image/image-20210429193216198.png" alt="image-20210429193216198"></p>
+<p><img src="/.io//image-20210429193216198.png" alt="image-20210429193216198"></p>
 <h4 id="通过CLassLoader读取配置文件"><a href="#通过CLassLoader读取配置文件" class="headerlink" title="通过CLassLoader读取配置文件"></a>通过CLassLoader读取配置文件</h4><pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">//了解类加载器</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoaderTest</span><span class="token punctuation">&#123;</span>
     
@@ -5523,7 +5520,7 @@ baos<span class="token punctuation">.</span><span class="token function">write</
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">126.6k</span>
+                        class="white-color">126.4k</span>
             
             
             
